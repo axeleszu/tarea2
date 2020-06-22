@@ -88,6 +88,7 @@ app.get('/', function (req, res) {
       console.log(result);
       db.close();
     });
+    console.log(listArr)
     var col = db.collection('counts');
     col.insert({ ip: req.ip, date: Date.now() });
     col.count(function (err, count) {
