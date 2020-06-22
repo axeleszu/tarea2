@@ -100,7 +100,7 @@ app.get('/', function (req, res) {
 
 
   } else {
-    res.render('index.html', { pageCountMessage: null });
+    res.render('index.html', { pageCountMessage: null, lista: null });
   }
 });
 
