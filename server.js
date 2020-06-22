@@ -17,7 +17,7 @@ server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
 
-var url = "mongodb://localhost:27017";
+var url = "mongodb://localhost:27017/listadb";
 
 // A Client to MongoDB
 var MongoClient = require('mongodb').MongoClient;
