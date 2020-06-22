@@ -77,6 +77,7 @@ app.post('/', function (req, res) {
     console.log(req.body.producto);
     console.log(req.body);
   }
+  res.render('index.html', { pageCountMessage: count, dbInfo: dbDetails, producto: null, cantidad: null });
 
 });
 app.get('/', function (req, res) {
