@@ -1,0 +1,28 @@
+{
+  "name": "tarea2",
+  "version": "1.0.0",
+  "description": "Tarea 2 Cloud Computing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axeleszu/tarea2.git"
+  },
+  "keywords": [
+    "Tarea",
+    "2"
+  ],
+  "author": "Axel Escutia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axeleszu/tarea2/issues"
+  },
+  "homepage": "https://github.com/axeleszu/tarea2#readme",
+  "dependencies": {
+    "mongodb": "^3.5.9"
+  },
+  "devDependencies": {}
+}
