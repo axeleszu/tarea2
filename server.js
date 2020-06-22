@@ -86,7 +86,7 @@ app.get('/', function (req, res) {
     listArr = db.collection("lista").find({}).toArray(function (err, result) {
       if (err) throw err;
       console.log(result);
-      db.close();
+      return result;
     });
     console.log(listArr)
     var col = db.collection('counts');
