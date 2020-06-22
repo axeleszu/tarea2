@@ -83,13 +83,18 @@ app.get('/', function (req, res) {
     if (req.producto) {
       db.collection('lista').insert({ producto: req.producto, cantidad: req.cantidad })
     }
+    listArr = db.collection("lista").find({}).toArray(function (err, result) {
+      if (err) throw err;
+      console.log(result);
+      db.close();
+    });
     var col = db.collection('counts');
     col.insert({ ip: req.ip, date: Date.now() });
     col.count(function (err, count) {
       if (err) {
         console.log('Error running count. Message:\n' + err);
       }
-      res.render('index.html', { pageCountMessage: count, dbInfo: dbDetails });
+      res.render('index.html', { pageCountMessage: count, dbInfo: dbDetails, lista: listArr });
     });
 
 
