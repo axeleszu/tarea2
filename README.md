@@ -190,9 +190,9 @@ Running `oc status` or checking the web console will reveal the address of the n
 
 	In project nodejs-echo on server https://10.2.2.2:8443
 
-	svc/mongodb-26-centos7 - 172.30.0.112:27017
-	  dc/mongodb-26-centos7 deploys istag/mongodb-26-centos7:latest
-	    deployment #1 running for 43 seconds - 1 pod
+	svc/mongodb-26-centos7 - 172.30.161.80:27017
+                 dc/mongodb-26-centos7 deploys istag/mongodb-26-centos7:latest
+                 deployment #1 deployed 5 minutes ago - 1 pod
 
 	http://10.2.2.2 to pod port 8080-tcp (svc/nodejs-ex)
 	  dc/nodejs-ex deploys istag/nodejs-ex:latest <-
