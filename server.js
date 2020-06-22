@@ -72,14 +72,14 @@ var initDb = function (callback) {
     console.log('Connected to MongoDB at: %s', mongoURL);
   });
 };
-app.post('/', function (req, res) {
+/*app.post('/', function (req, res) {
   if (req.body) {
     console.log(req.body.producto);
     console.log(req.body);
   }
   res.render('index.html', { pageCountMessage: count, dbInfo: dbDetails, producto: null, cantidad: null });
 
-});
+});*/
 app.get('/', function (req, res) {
 
   if (!db) {
