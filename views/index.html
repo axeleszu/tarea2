@@ -53,13 +53,45 @@
 
   <script>
     ob = [];
+    if (localStorage.getItem('lista')) {
+      ob = JSON.parse(localStorage.getItem('lista'));
+    }
     ap = document.getElementById('agregarProducto');
     ap.addEventListener('submit', function (e) {
       e.preventDefault();
       ob.push({ p: ap.producto.value, c: ap.cantidad.value });
       console.log(ob);
-
-    }, false)
+      ap.producto.value = '';
+      ap.cantidad.value = '';
+      localStorage.setItem('lista', JSON.stringify(ob));
+      llenar();
+    }, false);
+    prod = document.getElementById("productos");
+    function llenar() {
+      prod.innerHTML = '';
+      for (i = 0; i < ob.length; i++) {
+        pa = document.createElement('p');
+        pat = document.createTextNode(ob[i].p);
+        pa.setAttribute('class', 'producto')
+        pa.appendChild(pat);
+        prod.appendChild(pa)
+        sa = document.createElement('p');
+        sa.setAttribute('class', 'cantidad');
+        sat = document.createTextNode(ob[i].c)
+        sa.appendChild(sat);
+        prod.appendChild(sa);
+        da = document.createElement('button');
+        da.setAttribute('onclick', 'delReg(' + i + ')');
+        dat = document.createTextNode('X');
+        da.appendChild(dat);
+        prod.appendChild(da);
+      }
+    }
+    function delReg(el) {
+      ob.splice(el, 1);
+      llenar();
+    }
+    llenar();
   </script>
 
 
