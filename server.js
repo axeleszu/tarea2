@@ -78,12 +78,10 @@ app.get('/', function (req, res) {
     initDb(function (err) { });
   }
   if (db) {
-    pp = '';
-    pc = '';
     if (req.producto) {
       db.collection('lista').insert({ producto: req.producto, cantidad: req.cantidad })
     }
-    listArr = db.collection("lista").find({}).toArray(function (err, result) {
+    var listArr = db.collection("lista").find({}).toArray(function (err, result) {
       if (err) throw err;
       console.log(result);
       return result;

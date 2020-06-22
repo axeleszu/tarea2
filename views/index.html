@@ -54,8 +54,9 @@
   <script>
     ob = [];
     ap = document.getElementById('agregarProducto');
-    ap.addEventListener('submit', function () {
-      ob.push({ p: ap.producto, c: ap.cantidad });
+    ap.addEventListener('submit', function (e) {
+      e.preventDefault();
+      ob.push({ p: ap.producto.value, c: ap.cantidad.value });
       console.log(ob);
 
     }, false)
