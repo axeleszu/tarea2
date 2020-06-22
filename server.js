@@ -72,19 +72,17 @@ var initDb = function (callback) {
     console.log('Connected to MongoDB at: %s', mongoURL);
   });
 };
-app.post('/', function (request, response) {
-  console.log(request.body.producto);
-  console.log(request.body);
+app.post('/', function (req, res) {
+  console.log(req.body.producto);
+  console.log(req.body);
 });
 app.get('/', function (req, res) {
-  // try to initialize the db on every request if it's not already
-  // initialized.
+
   if (!db) {
     initDb(function (err) { });
   }
   if (db) {
     var col = db.collection('counts');
-    // Create a document with request IP and current time of request
     col.insert({ ip: req.ip, date: Date.now() });
     col.count(function (err, count) {
       if (err) {
