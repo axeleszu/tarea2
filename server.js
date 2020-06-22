@@ -73,8 +73,8 @@ var initDb = function (callback) {
   });
 };
 app.post('/', function (request, response) {
-  console.log(request.body.user.name);
-  console.log(request.body.user.email);
+  console.log(request.body.producto);
+  console.log(request.body);
 });
 app.get('/', function (req, res) {
   // try to initialize the db on every request if it's not already
