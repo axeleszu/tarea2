@@ -73,8 +73,11 @@ var initDb = function (callback) {
   });
 };
 app.post('/', function (req, res) {
-  console.log(req.body.producto);
-  console.log(req.body);
+  if (req.body) {
+    console.log(req.body.producto);
+    console.log(req.body);
+  }
+
 });
 app.get('/', function (req, res) {
 
