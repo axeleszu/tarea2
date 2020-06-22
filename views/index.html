@@ -15,7 +15,18 @@
 
   <section class='container'>
 
-
+    <form method="post" action="/">
+      <label>Producto</label>
+      <input type="text" name="producto">
+      <label>Cantidad</label>
+      <input type="text" name="cantidad">
+      <input type="submit" value="Submit">
+    </form>
+    <div class="productos">
+      <% if (producto && cantidad) { %>
+      <p><%=producto%> - <%cantidad%></p>
+      <%} %>
+    </div>
 
     <h2>Request information</h2>
     <p>Page view count:
@@ -40,13 +51,7 @@
     </p>
     <%} %>
   </section>
-  <form method="post" action="/">
-    <label>Producto</label>
-    <input type="text" name="producto">
-    <label>Cantidad</label>
-    <input type="text" name="cantidad">
-    <input type="submit" value="Submit">
-  </form>
+
 
 
 
