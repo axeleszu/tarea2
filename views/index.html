@@ -14,19 +14,17 @@
 <body>
   <section class='container'>
 
-    <form method="post" action="/">
+    <form id="agregarProducto" method="post" action="/">
       <label>Producto</label>
-      <input type="text" name="producto">
+      <input type="text" name="producto" required>
       <label>Cantidad</label>
-      <input type="text" name="cantidad">
+      <input type="text" name="cantidad" required>
       <input type="submit" value="Submit">
     </form>
-    <div class="productos">
-      <% if (producto && cantidad) { %>
-      <p><%=producto%> - <%cantidad%></p>
-      <%} %>
-    </div>
+    <div id="productos">
 
+    </div>
+    <!--
     <h2>Request information</h2>
     <p>Page view count:
       <% if (pageCountMessage) { %>
@@ -49,9 +47,19 @@
     <span class="code" id="count-value">No database configured</span>
     </p>
     <%} %>
+  -->
+
   </section>
 
+  <script>
+    ob = [];
+    ap = document.getElementById('agregarProducto');
+    ap.addEventListener('submit', function () {
+      ob.push({ p: ap.producto, c: ap.cantidad });
+      console.log(ob);
 
+    }, false)
+  </script>
 
 
 </body>
